@@ -179,6 +179,7 @@ object SaleDetailApp {
       })
     })
 
+    // 检验
     fullSaleDetailDStream.print()
 
     //启动
