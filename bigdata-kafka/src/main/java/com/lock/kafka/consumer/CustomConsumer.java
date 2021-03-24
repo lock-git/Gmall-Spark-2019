@@ -6,6 +6,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Properties;
 
 public class CustomConsumer {
@@ -25,7 +26,7 @@ public class CustomConsumer {
          // 创建消费者对象
          KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
          // 订阅主题
-         consumer.subscribe(Arrays.asList("first"));
+         consumer.subscribe(Collections.singletonList("first"));
 
          //
          while (true) {
