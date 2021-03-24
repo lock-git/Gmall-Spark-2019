@@ -21,6 +21,7 @@
         <module>gmall-publisher</module>
         <module>dw-chart</module>
         <module>gmall-canal</module>
+        <module>bigdata-kafka</module>
     </modules>
     <properties>
         <spark.version>2.1.1</spark.version>
