@@ -1,4 +1,4 @@
-package com.atguigu.bean
+package com.lock.bean
 
 case class StartUpLog(mid: String,
                       uid: String,

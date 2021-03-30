@@ -1,4 +1,4 @@
-package com.atguigu.bean
+package com.lock.bean
 
 case class UserInfo(id:String ,
                     login_name:String,

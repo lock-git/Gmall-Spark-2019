@@ -1,4 +1,4 @@
-package com.atguigu.utils
+package com.lock.utils
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession

@@ -1,4 +1,4 @@
-package com.atguigu.bean
+package com.lock.bean
 
 import java.text.SimpleDateFormat
 import java.util

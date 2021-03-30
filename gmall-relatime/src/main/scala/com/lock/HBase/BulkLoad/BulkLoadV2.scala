@@ -1,6 +1,6 @@
-package com.atguigu.HBase.BulkLoad
+package com.lock.HBase.BulkLoad
 
-import com.atguigu.utils.SparkUtils
+import com.lock.utils.SparkUtils
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.fs.{FileSystem, Path}
 import org.apache.hadoop.hbase._

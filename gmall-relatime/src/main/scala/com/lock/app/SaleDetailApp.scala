@@ -1,11 +1,11 @@
-package com.atguigu.app
+package com.lock.app
 
 import java.util
 
 import com.alibaba.fastjson.JSON
-import com.atguigu.bean.{OrderDetail, OrderInfo, SaleDetail, UserInfo}
-import com.atguigu.constants.GmallConstants
-import com.atguigu.utils.{MyEsUtil, MyKafkaUtil, RedisUtil}
+import com.lock.bean.{OrderDetail, OrderInfo, SaleDetail, UserInfo}
+import com.lock.constants.GmallConstants
+import com.lock.utils.{MyEsUtil, MyKafkaUtil, RedisUtil}
 import org.apache.spark.SparkConf
 import org.apache.spark.rdd.RDD
 import org.apache.spark.streaming.{Seconds, StreamingContext}

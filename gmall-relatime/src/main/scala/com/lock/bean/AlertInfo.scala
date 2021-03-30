@@ -1,4 +1,4 @@
-package com.atguigu.bean
+package com.lock.bean
 
 case class AlertInfo(mid: String,
                      uids: java.util.HashSet[String],

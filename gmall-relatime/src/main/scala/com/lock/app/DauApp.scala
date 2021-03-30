@@ -1,13 +1,13 @@
-package com.atguigu.app
+package com.lock.app
 
 import java.text.SimpleDateFormat
 import java.util.Date
 
 import com.alibaba.fastjson.JSON
-import com.atguigu.bean.StartUpLog
-import com.atguigu.constants.GmallConstants
-import com.atguigu.handler.DAUHandler
-import com.atguigu.utils.MyKafkaUtil
+import com.lock.bean.StartUpLog
+import com.lock.constants.GmallConstants
+import com.lock.handler.DAUHandler
+import com.lock.utils.MyKafkaUtil
 import org.apache.hadoop.conf.Configuration
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.dstream.{DStream, InputDStream}
