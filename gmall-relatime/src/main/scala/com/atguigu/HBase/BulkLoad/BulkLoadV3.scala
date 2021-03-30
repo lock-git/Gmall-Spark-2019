@@ -1,5 +1,7 @@
 package com.atguigu.HBase.BulkLoad
 
+import java.util
+
 import com.atguigu.utils.SparkUtils
 import org.apache.hadoop.conf.Configuration
 import org.apache.hadoop.hbase._
@@ -8,6 +10,8 @@ import org.apache.hadoop.hbase.mapreduce.TableOutputFormat
 import org.apache.hadoop.hbase.util.Bytes
 import org.apache.spark.sql
 import org.apache.spark.sql.DataFrame
+
+import scala.util.Try
 
 /**
   * author  Lock.xia
@@ -28,7 +32,8 @@ object BulkLoadV3 {
       val conn: Connection = ConnectionFactory.createConnection(hbaseConf)
       val table: Table = conn.getTable(TableName.valueOf("batch_put"))
 
-      val res: List[Put] = partition.map { row =>
+      val puts = new util.ArrayList[Put]()
+      partition.foreach { row: sql.Row =>
         val rowKey: Array[Byte] = Bytes.toBytes(row.getAs(rowKeyField).toString)
         val put = new Put(rowKey)
         val family: Array[Byte] = Bytes.toBytes("hfile-fy")
@@ -37,10 +42,9 @@ object BulkLoadV3 {
           put.addColumn(family, Bytes.toBytes(field), Bytes.toBytes(row.getAs(field).toString))
         }
 
-        put
-      }.toList
-
-      //      Try(table.put(res)).getOrElse(table.close())
+        puts.add(put)
+      }
+      Try(table.put(puts)).getOrElse(table.close())
 
       table.close()
       conn.close()
