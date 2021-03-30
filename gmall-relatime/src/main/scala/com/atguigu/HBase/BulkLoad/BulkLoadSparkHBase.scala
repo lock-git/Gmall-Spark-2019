@@ -34,7 +34,7 @@ object BulkLoadSparkHBase {
     )
     val dataRdd: RDD[(String, (String, String, String))] = sc.parallelize(data)
 
-    val output: RDD[(ImmutableBytesWritable, KeyValue)] = dataRdd.map {
+    val outputRDD: RDD[(ImmutableBytesWritable, KeyValue)] = dataRdd.map {
       x: (String, (String, String, String)) => {
         val rowKey: Array[Byte] = Bytes.toBytes(x._1)
         val immutableRowKey = new ImmutableBytesWritable(rowKey)
@@ -70,7 +70,7 @@ object BulkLoadSparkHBase {
 
     val hFileOutput = "/tmp/h_file"
 
-    output.saveAsNewAPIHadoopFile(hFileOutput,
+    outputRDD.saveAsNewAPIHadoopFile(hFileOutput,
       classOf[ImmutableBytesWritable],
       classOf[KeyValue],
       classOf[HFileOutputFormat2],
