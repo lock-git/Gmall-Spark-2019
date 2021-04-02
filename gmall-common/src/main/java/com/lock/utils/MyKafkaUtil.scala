@@ -1,4 +1,4 @@
-package com.atguigu.utils
+package com.lock.utils
 
 import java.util.Properties
 
