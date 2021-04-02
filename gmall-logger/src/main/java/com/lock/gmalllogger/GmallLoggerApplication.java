@@ -1,4 +1,4 @@
-package com.atguigu.gmalllogger;
+package com.lock.gmalllogger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
